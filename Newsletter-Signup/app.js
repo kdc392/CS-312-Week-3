@@ -32,11 +32,11 @@ app.post('/', function(req, res){
 
   const jsonData = JSON.stringify(data);
 
-  const url = 'https://us17.api.mailchimp.com/3.0/lists/54b30881dd';
+  const url = 'https://us17.api.mailchimp.com/3.0/lists/[audience key]';
 
   const options = {
     method: 'POST',
-    auth: 'kdc392:5e794f3dccf097f08d59eadd82c132aa-us17'
+    auth: 'kdc392:[MailChimp API Key]'
   };
 
   const request = https.request(url, options, function(response){
@@ -66,7 +66,3 @@ app.listen(process.env.PORT || 3000, function(){
   console.log('Server is listening on port 3000');
 });
 
-//api key
-//  5e794f3dccf097f08d59eadd82c132aa-us17
-//audience
-//  54b30881dd
